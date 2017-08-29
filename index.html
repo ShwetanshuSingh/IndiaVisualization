@@ -50,9 +50,8 @@
 
                 width: 250px;
                 height: 250px;
-                
                 border: thin solid grey;
-                background: transparent;
+                background: rgba(0,0,0,0.75);	
                 opacity: 1;
                 text-align: center;
             }
@@ -184,15 +183,15 @@
 
             function getStyle(feature) {
                 
-                //console.log(indiaCensus.states.AP.density);
-                //console.log(indiaCensus.states[feature.properties.code].density);
+                //console.log(indiaData.states.AP.density);
+                //console.log(indiaData.states[feature.properties.code].density);
 
                 return {
                     weight: 2,
                     opacity: 0.1,
                     color: 'black',
                     fillOpacity: 0.9,
-                    fillColor: getDensityColor( indiaCensus.states[feature.properties.code].density )
+                    fillColor: getDensityColor( indiaData.states[feature.properties.code].DISE.density )
                 };
             }
 
@@ -223,7 +222,7 @@
                     layer.bringToFront();
                 }
 
-                updateGraph( indiaCensus.states[layer.feature.properties.code] );
+                updateGraph( indiaData.states[layer.feature.properties.code] );
             }
 
             function resetHighlight(e) {
@@ -335,7 +334,7 @@
                     .text("Male");      
 
             pieLegend.append("div")
-                        .html("<strong>Sex Ratio: </strong>Females for every 1000 Males")
+                        .html("<strong>Enrollment Ratio: </strong>Females for every 1000 Males")
                         .style("color", "white")
                         .style("margin-top", "5px");
 
@@ -348,7 +347,7 @@
             var pieData = [];
 
             pieData.push( { type: "male", ratio: 1000, color: pieColors.male } );
-            pieData.push( { type: "female", ratio: 868, color: pieColors.female } );
+            pieData.push( { type: "female", ratio: 870, color: pieColors.female } );
 
             var pie = d3.layout.pie()
                         .sort(null)
@@ -375,7 +374,7 @@
             var barWidth = 250,
                 barHeight = 180,
                 barSize = 50,
-                literacyData = [ 86.21 ];
+                literacyData = [ 0.0 ];
 
             var barName = d3.select(".bar-graph")
                                 .append("div")
@@ -400,8 +399,8 @@
                                     .append("div")
                                 .style("color", "white")
                                 .style("font-weight", "bold")
-                                .style("font-size", "15px")
-                                .text("Literacy: ")
+                                .style("font-size", "13px")
+                                .text("Std. V can read Std. II text: ")
                                     .append("span")
                                 .attr("id", "literacy-percent")
                                 .text(literacyData[0].toFixed(2) + "%")
@@ -425,7 +424,7 @@
                 pieData = [];
 
                 pieData.push( { type: "male", ratio: 1000, color: pieColors.male } );
-                pieData.push( { type: "female", ratio: graphData.sexratio, color: pieColors.female } );
+                pieData.push( { type: "female", ratio: graphData.DISE.enrollment_sex_ratio_I_V, color: pieColors.female } );
 
                 var pieUpdate = pieSvg.selectAll(".pie-piece")
                                         .data( pie(pieData) );
@@ -448,13 +447,13 @@
                         .style("text-anchor", "middle")
                         .text( function(d) { return d.data.ratio; } );
                 
-                pieName.text( graphData.name );
+                pieName.text( graphData.DISE.name );
 
                 
-                barName.text( graphData.name );
+                barName.text( graphData.DISE.name );
 
                 literacyData = [];
-                literacyData.push( +graphData.literacy );
+                literacyData.push( +graphData.ASER.std_v_division );
 
                 d3.select("#literacy-bar").selectAll("rect")
                                 .data( literacyData )
@@ -470,15 +469,15 @@
                                 })
                                 .style("fill",  function(d) { return getLiteracyColor(d); } );
 
-                barLegend.text( graphData.literacy.toFixed(2) + "%" )
+                barLegend.text( graphData.ASER.std_v_division.toFixed(2) + "%" )
                         .transition().duration(500)
-                        .style("color", getLiteracyColor(+graphData.literacy) );
+                        .style("color", getLiteracyColor(+graphData.ASER.std_v_division) );
             }
 
             function getLiteracyColor (literacy) {
                 
                 var literacyBrew = ['rgb(215,25,28)','rgb(253,174,97)','rgb(166,217,106)','rgb(26,150,65)'].reverse(),
-                    literacyRange = [ 90, 80, 70, 60];
+                    literacyRange = [ 50, 40, 30, 20];
 
                 literacy = +literacy;
 

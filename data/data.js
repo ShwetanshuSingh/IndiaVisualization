@@ -1,860 +1,548 @@
-// ref: http://www.census2011.co.in/states.php
-// Census data of year 2011
-
-var stateCensus = {
-
-	"UP": {
-
-		"name": "Uttar Pradesh",
-		"capital": {
-			"name": "Lucknow",
-			"details": [ 
-				{
-					"name": "Lucknow",
-					"coordinates": [ 26.846511, 80.946683 ],
-					"population": "2,901,474",
-					"sexratio": 915,
-					"literacy": 84.72
-				} 
-			] 
-		},
-		"population": "199,812,341",
-		"growth": 20.23,
-		"area": 240928,
-		"density": 829,
-		"sexratio": 912,
-		"literacy": 67.68
-
-	},
-
-	"MH": {
-
-		"name": "Maharashtra",
-		"capital": {
-			"name": "Mumbai",
-			"details": [
-				{
-					"name": "Mumbai",
-					"coordinates": [ 19.075984, 72.877656 ],
-					"population": "18,414,288",
-					"sexratio": 852,
-					"literacy": 90.28
-				}
-			]
-		},
-		"population": "112,374,333",
-		"growth": 15.99,
-		"area": 307713,
-		"density": 365,
-		"sexratio": 929,
-		"literacy": 82.34
-
-	},
-
-	"BR": {
-
-		"name": "Bihar",
-		"capital": {
-			"name": "Patna",
-			"details": [
-				{
-					"name": "Patna",
-					"coordinates": [ 25.611000, 85.144000 ],
-					"population": "2,046,652",
-					"sexratio": 882,
-					"literacy": 84.71
-				}
-			]
-		},
-		"population": "104,099,452",
-		"growth": 25.42,
-		"area": 94163,
-		"density": 1106,
-		"sexratio": 918,
-		"literacy": 61.80
-
-	},
-
-	"WB": {
-
-		"name": "West Bengal",
-		"capital": {
-			"name": "Kolkata",
-			"details": [
-				{
-					"name": "Kolkata",
-					"coordinates": [ 22.572646, 88.363895 ],
-					"population": "14,112,536",
-					"sexratio": 899,
-					"literacy": 87.14
-				}
-			]
-		},
-		"population": "91,276,115",
-		"growth": 13.84,
-		"area": 88752,
-		"density": 1028,
-		"sexratio": 950,
-		"literacy": 76.26
-
-	},
-
-	"TL": {
-
-		"name": "Telangana",
-		"capital": {
-			"name": "Hyderabad",
-			"details": [
-				{
-					"name": "Hyderabad",
-					"coordinates": [ 17.385044, 78.486671 ],
-					"population": "7,749,334",
-					"sexratio": 945,
-					"literacy": 82.96
-				}
-			]
-		},
-		"population": "84,580,777",
-		"growth": 10.98,
-		"area": 275045,
-		"density": 308,
-		"sexratio": 993,
-		"literacy": 67.02
-
-	},
-
-	"AP": {
-
-		"name": "Andhra Pradesh",
-		"capital": {
-			"name": "Hyderabad",
-			"details": [
-				{
-					"name": "Hyderabad",
-					"coordinates": [ 17.385044, 78.486671 ],
-					"population": "7,749,334",
-					"sexratio": 945,
-					"literacy": 82.96
-				}
-			]
-		},
-		"population": "84,580,777",
-		"growth": 10.98,
-		"area": 275045,
-		"density": 308,
-		"sexratio": 993,
-		"literacy": 67.02
-
-	},
-
-	"MP": {
-
-		"name": "Madhya Pradesh",
-		"capital": {
-			"name": "Bhopal",
-			"details": [
-				{
-					"name": "Bhopal",
-					"coordinates": [ 23.259933, 77.412615 ],
-					"population": "1,883,381",
-					"sexratio": 911,
-					"literacy": 85.24
-				}
-			]
-		},
-		"population": "72,626,809",
-		"growth": 20.35,
-		"area": 308252,
-		"density": 236,
-		"sexratio": 931,
-		"literacy": 69.32
-
-	},
-
-	"TN": {
-
-		"name": "Tamil Nadu",
-		"capital": {
-			"name": "Chennai",
-			"details": [
-				{
-					"name": "Chennai",
-					"coordinates": [ 13.082680, 80.270718 ],
-					"population": "8,696,010",
-					"sexratio": 986,
-					"literacy": 90.33
-				}
-			]
-		},
-		"population": "72,147,030",
-		"growth": 15.61,
-		"area": 130060,
-		"density": 555,
-		"sexratio": 996,
-		"literacy": 80.09
-
-	},
-
-	"RJ": {
-
-		"name": "Rajasthan",
-		"capital": {
-			"name": "Jaipur",
-			"details": [
-				{
-					"name": "Jaipur",
-					"coordinates": [ 26.912434, 75.787271 ],
-					"population": "3,073,350",
-					"sexratio": 898,
-					"literacy": 84.34
-				}
-			]
-		},
-		"population": "68,548,437",
-		"growth": 21.31,
-		"area": 342239,
-		"density": 200,
-		"sexratio": 928,
-		"literacy": 66.11
-
-	},
-
-	"KA": {
-
-		"name": "Karnataka",
-		"capital": {
-			"name": "Bengaluru",
-			"details": [
-				{
-					"name": "Bengaluru",
-					"coordinates": [ 12.971599, 77.594563 ],
-					"population": "8,499,399",
-					"sexratio": 914,
-					"literacy": 89.59
-				}
-			]
-		},
-		"population": "61,095,297",
-		"growth": 15.60,
-		"area": 191791,
-		"density": 319,
-		"sexratio": 973,
-		"literacy": 75.36
-
-	}, 
-
-	"GJ": {
-
-		"name": "Gujarat",
-		"capital": {
-			"name": "Gandhinagar",
-			"details": [
-				{
-					"name": "Gandhinagar",
-					"coordinates": [ 23.215635, 72.636941 ],
-					"population": "208,299",
-					"sexratio": 903,
-					"literacy": 93.70
-				}
-			]
-		},
-		"population": "60,439,692",
-		"growth": 19.28,
-		"area": 196244,
-		"density": 308,
-		"sexratio": 919,
-		"literacy": 78.03
-
-	},
-
-	"OR": {
-
-		"name": "Odisha",
-		"capital": {
-			"name": "Bhubaneshwar",
-			"details": [
-				{
-					"name": "Bhubaneshwar",
-					"coordinates": [ 20.296059, 85.824540 ],
-					"population": "881,988",
-					"sexratio": 882,
-					"literacy": 93.15
-				}
-			]
-		},
-		"population": "41,974,218",
-		"growth": 14.05,
-		"area": 155707,
-		"density": 270,
-		"sexratio": 979,
-		"literacy": 72.87
-
-	}, 
-
-	"KL": {
-
-		"name": "Kerala",
-		"capital": {
-			"name": "Thiruvanandhapuram",
-			"details": [
-				{
-					"name": "Thiruvanandhapuram",
-					"coordinates": [ 8.524139, 76.936638 ],
-					"population": "1,687,406",
-					"sexratio": 1064,
-					"literacy": 93.72
-				}
-			]
-		},
-		"population": "33,406,061",
-		"growth": 4.91,
-		"area": 38852,
-		"density": 860,
-		"sexratio": 1084,
-		"literacy": 94.00
-
-	},
-
-	"JH": {
-
-		"name": "Jharkhand",
-		"capital": {
-			"name": "Ranchi",
-			"details": [
-				{
-					"name": "Ranchi",
-					"coordinates": [ 23.344100, 85.309562 ],
-					"population": "1,126,741",
-					"sexratio": 920,
-					"literacy": 88.49
-				}
-			]
-		},
-		"population": "32,988,134",
-		"growth": 22.42,
-		"area": 79716,
-		"density": 414,
-		"sexratio": 948,
-		"literacy": 66.41
-
-	},
-
-	"AS": {
-
-		"name": "Assam",
-		"capital": {
-			"name": "Dispur",
-			"details": [
-				{
-					"name": "Dispur",
-					"coordinates": [ 26.140833, 91.790833 ]
-				}
-			]
-		},
-		"population": "31,205,576",
-		"growth": 17.07,
-		"area": 78438,
-		"density": 398,
-		"sexratio": 958,
-		"literacy": 72.19
-
-	},
-
-	"PB": {
-
-		"name": "Punjab",
-		"capital": {
-			"name": "Chandigarh",
-			"details": [
-				{
-					"name": "Chandigarh",
-					"coordinates": [ 30.733315, 76.779418 ],
-					"population": "1,025,682",
-					"sexratio": 829,
-					"literacy": 86.77
-				}
-			]
-		},
-		"population": "27,743,338",
-		"growth": 13.89,
-		"area": 50362,
-		"density": 551,
-		"sexratio": 895,
-		"literacy": 75.84
-
-	},
-
-	"CT": {
-
-		"name": "Chhattisgarh",
-		"capital": {
-			"name": "Raipur",
-			"details": [
-				{
-					"name": "Raipur",
-					"coordinates": [ 21.251384, 81.629641 ],
-					"population": "1,122,555",
-					"sexratio": 945,
-					"literacy": 86.90
-				}
-			]
-		},
-		"population": "25,545,198",
-		"growth": 22.61,
-		"area": 135192,
-		"density": 189,
-		"sexratio": 991,
-		"literacy": 70.28
-
-	},
-
-	"HR": {
-
-		"name": "Haryana",
-		"capital": {
-			"name": "Chandigarh",
-			"details": [
-				{
-					"name": "Chandigarh",
-					"coordinates": [ 30.733315, 76.779418 ],
-					"population": "1,025,682",
-					"sexratio": 829,
-					"literacy": 86.77
-				}
-			]
-		},
-		"population": "25,351,462",
-		"growth": 19.90,
-		"area": 44212,
-		"density": 573,
-		"sexratio": 879,
-		"literacy": 75.55
-
-	},
-
-	"DL": {
-
-		"name": "Delhi",
-		"capital": {
-			"name": "Delhi",
-			"details": [
-				{
-					"name": "Delhi",
-					"coordinates": [ 28.613939, 77.209021 ],
-					"population": "16,314,838",
-					"sexratio": 875,
-					"literacy": 87.60
-				}
-			]
-		},
-		"population": "16,787,941",
-		"growth": 21.21,
-		"area": 1483,
-		"density": 11320,
-		"sexratio": 868,
-		"literacy": 86.21
-
-	},
-
-	"JK": {
-
-		"name": "Jammu and Kashmir",
-		"capital": {
-			"name": "Srinagar(summer), Jammu(winter)",
-			"details": [
-				{
-					"name": "Srinagar (summer)",
-					"coordinates": [ 34.083658, 74.797368 ],
-					"population": "1,273,312",
-					"sexratio": 888,
-					"literacy": 70.98
-				},
-				{
-					"name": "Jammu (winter)",
-					"coordinates": [ 32.726602, 74.857026 ],
-					"population": "651,826",
-					"sexratio": 898,
-					"literacy": 89.66
-				}
-			]
-		},
-		"population": "12,541,302",
-		"growth": 23.64,
-		"area": 222236,
-		"density": 56,
-		"sexratio": 889,
-		"literacy": 67.16
-
-	},
-
-	"UT": {
-
-		"name": "Uttarakhand",
-		"capital": {
-			"name": "Dehradun",
-			"details": [
-				{
-					"name": "Dehradun",
-					"coordinates": [ 30.316495, 78.032192 ],
-					"population": "714,223",
-					"sexratio": 906,
-					"literacy": 89.32
-				}
-			]
-		},
-		"population": "10,086,292",
-		"growth": 18.81,
-		"area": 53483,
-		"density": 189,
-		"sexratio": 963,
-		"literacy": 78.82
-
-	},
-
-	"HP": {
-
-		"name": "Himachal Pradesh",
-		"capital": {
-			"name": "Shimla",
-			"details": [
-				{
-					"name": "Shimla",
-					"coordinates": [ 31.104814, 77.173403 ],
-					"population": "171,817",
-					"sexratio": 818,
-					"literacy": 94.67
-				}
-			]
-		},
-		"population": "6,864,602",
-		"growth": 12.94,
-		"area": 55673,
-		"density": 123,
-		"sexratio": 972,
-		"literacy": 82.80
-
-	},
-
-	"TR": {
-
-		"name": "Tripura",
-		"capital": {
-			"name": "Agartala",
-			"details": [
-				{
-					"name": "Agartala",
-					"coordinates": [ 23.831457, 91.286778 ],
-					"population": "399,688",
-					"sexratio": 1002,
-					"literacy": 93.88
-				}
-			]
-		},
-		"population": "3,673,917",
-		"growth": 14.84,
-		"area": 10486,
-		"density": 350,
-		"sexratio": 960,
-		"literacy": 87.22
-
-	},
-
-	"ML": {
-
-		"name": "Meghalaya",
-		"capital": {
-			"name": "Shillong",
-			"details": [
-				{
-					"name": "Shillong",
-					"coordinates": [ 25.578773, 91.893254 ],
-					"population": "354,325",
-					"sexratio": 1042,
-					"literacy": 92.34
-				}
-			]
-		},
-		"population": "2,966,889",
-		"growth": 27.95,
-		"area": 22429,
-		"density": 132,
-		"sexratio": 989,
-		"literacy": 74.43
-
-	},
-
-	"MN": {
-
-		"name": "Manipur",
-		"capital": {
-			"name": "Imphal",
-			"details": [
-				{
-					"name": "Imphal",
-					"coordinates": [ 24.820000, 93.950000 ],
-					"population": "414,288",
-					"sexratio": 1055,
-					"literacy": 91.70
-				}
-			]
-		},
-		"population": "2,570,390",
-		"growth": 12.05,
-		"area": 22327,
-		"density": 115,
-		"sexratio": 992,
-		"literacy": 79.21
-
-	},
-
-	"NL": {
-
-		"name": "Nagaland",
-		"capital": {
-			"name": "Kohima",
-			"details": [
-				{
-					"name": "Kohima",
-					"coordinates": [ 25.670100, 94.107700 ]
-				}
-			]
-		},
-		"population": "1,978,502",
-		"growth": -0.58,
-		"area": 16579,
-		"density": 119,
-		"sexratio": 931,
-		"literacy": 79.55
-
-	},
-
-	"GA": {
-
-		"name": "Goa",
-		"capital": {
-			"name": "Panaji",
-			"details": [
-				{
-					"name": "Panaji",
-					"coordinates": [ 15.490930, 73.827850 ]
-				}
-			]
-		},
-		"population": "1,458,545",
-		"growth": 8.23,
-		"area": 3702,
-		"density": 394,
-		"sexratio": 973,
-		"literacy": 88.70
-
-	},
-
-	"AR": {
-
-		"name": "Arunachal Pradesh",
-		"capital": {
-			"name": "Itanagar",
-			"details": [
-				{
-					"name": "Itanagar",
-					"coordinates": [ 27.084368, 93.605316 ]
-				}
-			]
-		},
-		"population": "1,383,727",
-		"growth": 26.03,
-		"area": 83743,
-		"density": 17,
-		"sexratio": 938,
-		"literacy": 65.38
-
-	},
-
-	"PY": {
-
-		"name": "Puducherry",
-		"capital": {
-			"name": "Puducherry",
-			"details": [
-				{
-					"name": "Puducherry",
-					"coordinates": [ 11.913860, 79.814472 ],
-					"population": "654,392",
-					"sexratio": 1045,
-					"literacy": 89.29
-				}
-			]
-		},
-		"population": "1,247,953",
-		"growth": 28.08,
-		"area": 490,
-		"density": 2547,
-		"sexratio": 1037,
-		"literacy": 85.85
-
-	},
-
-	"MZ": {
-
-		"name": "Mizoram",
-		"capital": {
-			"name": "Aizawl",
-			"details": [
-				{
-					"name": "Aizawl",
-					"coordinates": [ 23.727107, 92.717639 ],
-					"population": "291,822",
-					"sexratio": 1029,
-					"literacy": 98.80
-				}
-			]
-		},
-		"population": "1,097,206",
-		"growth": 23.48,
-		"area": 21081,
-		"density": 52,
-		"sexratio": 976,
-		"literacy": 91.33
-
-	},
-
-	"CH": {
-
-		"name": "Chandigarh",
-		"capital": {
-			"name": "Chandigarh",
-			"details": [
-				{
-					"name": "Chandigarh",
-					"coordinates": [ 30.733315, 76.779418 ],
-					"population": "1,025,682",
-					"sexratio": 829,
-					"literacy": 86.77
-				}
-			]
-		},
-		"population": "1,055,450",
-		"growth": 17.19,
-		"area": 114,
-		"density": 9258,
-		"sexratio": 818,
-		"literacy": 86.05
-
-	},
-
-	"SK": {
-
-		"name": "Sikkim",
-		"capital": {
-			"name": "Gangtok",
-			"details": [
-				{
-					"name": "Gangtok",
-					"coordinates": [ 27.338936, 88.606504 ]
-				}
-			]
-		},
-		"population": "610,577",
-		"growth": 12.89,
-		"area": 7096,
-		"density": 86,
-		"sexratio": 890,
-		"literacy": 81.42
-
-	},
-
-	"AN": {
-
-		"name": "Andaman and Nicobar Islands",
-		"capital": {
-			"name": "Port Blair",
-			"details": [
-				{
-					"name": "Port Blair",
-					"coordinates": [ 11.623377, 92.726483 ],
-					"population": "100,608",
-					"sexratio": 889,
-					"literacy": 89.76
-				}
-			]
-		},
-		"population": "380,581",
-		"growth": 6.86,
-		"area": 8249,
-		"density": 46,
-		"sexratio": 876,
-		"literacy": 86.63
-
-	},
-
-	"DN": {
-
-		"name": "Dadra and Nagar Haveli",
-		"capital": {
-			"name": "Silvassa",
-			"details": [
-				{
-					"name": "Silvassa",
-					"coordinates": [ 20.276266, 73.008306 ]
-				}
-			]
-		},
-		"population": "343,709",
-		"growth": 55.88,
-		"area": 491,
-		"density": 700,
-		"sexratio": 774,
-		"literacy": 76.24
-
-	},
-
-	"DD": {
-
-		"name": "Daman and Diu",
-		"capital": {
-			"name": "Daman",
-			"details": [
-				{
-					"name": "Daman",
-					"coordinates": [ 20.397374, 72.832799 ]
-				}
-			]
-		},
-		"population": "243,247",
-		"growth": 53.76,
-		"area": 111,
-		"density": 2191,
-		"sexratio": 618,
-		"literacy": 87.10
-
-	},
-
-	"LD": {
-
-		"name": "Lakshadweep",
-		"capital": {
-			"name": "Kavaratti",
-			"details": [
-				{
-					"name": "Kavaratti",
-					"coordinates": [ 10.559320, 72.635813 ]
-				}
-			]
-		},
-		"population": "64,473",
-		"growth": 6.30,
-		"area": 30,
-		"density": 2149,
-		"sexratio": 946,
-		"literacy": 91.85
-
-	}
-
+var stateData = {
+  "AN": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 878,
+      "name": "Andaman and Nicobar Islands",
+      "area": 8249,
+      "density": 46,
+      "literacy": 86.3,
+      "#schools": 410,
+      "population": 380000
+    }
+  },
+  "AP": {
+    "ASER": {
+      "std_v_division": 37.2
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 930,
+      "sex_ratio": 992,
+      "name": "Andhra Pradesh",
+      "area": 275045,
+      "density": 308,
+      "literacy": 67.70,
+      "#schools": 60435,
+      "population": 84666000
+    }
+  },
+  "AR": {
+    "ASER": {
+      "std_v_division": 19.0
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 950,
+      "sex_ratio": 920,
+      "name": "Arunachal Pradesh",
+      "area": 83743,
+      "density": 17,
+      "literacy": 67.0,
+      "#schools": 4012,
+      "population": 1383000
+    }
+  },
+  "AS": {
+    "ASER": {
+      "std_v_division": 13.6
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 980,
+      "sex_ratio": 954,
+      "name": "Assam",
+      "area": 78438,
+      "density": 398,
+      "literacy": 73.2,
+      "#schools": 65894,
+      "population": 31169000
+    }
+  },
+  "BR": {
+    "ASER": {
+      "std_v_division": 32.6
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 980,
+      "sex_ratio": 916,
+      "name": "Bihar",
+      "area": 94163,
+      "density": 1106,
+      "population": 103805000,
+      "#schools": 80166,
+      "literacy": 63.8
+    }
+  },
+  "CH": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 880,
+      "sex_ratio": 818,
+      "name": "Chandigarh",
+      "area": 114,
+      "density": 9258,
+      "literacy": 86.4,
+      "#schools": 201,
+      "population": 1055000
+    }
+  },
+  "CT": {
+    "ASER": {
+      "std_v_division": 23.0
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 991,
+      "name": "Chhattisgarh",
+      "area": 135191,
+      "density": 189,
+      "literacy": 71.0,
+      "#schools": 50705,
+      "population": 25540000
+    }
+  },
+  "DD": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 860,
+      "sex_ratio": 618,
+      "name": "Daman and Diu",
+      "area": 112,
+      "density": 2191,
+      "literacy": 87.1,
+      "#schools": 120,
+      "population": 243000
+    }
+  },
+  "DL": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 870,
+      "sex_ratio": 866,
+      "name": "Delhi",
+      "area": 1483,
+      "density": 11320,
+      "population": 16753000,
+      "#schools": 5751,
+      "literacy": 86.3
+    }
+  },
+  "DN": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 880,
+      "sex_ratio": 775,
+      "name": "Dadra and Nagar Haveli",
+      "area": 451,
+      "density": 700,
+      "population": 343000,
+      "#schools": 323,
+      "literacy": 77.7
+    }
+  },
+  "GA": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 920,
+      "sex_ratio": 968,
+      "name": "Goa",
+      "area": 3702,
+      "density": 394,
+      "literacy": 87.4,
+      "#schools": 1462,
+      "population": 1458000
+    }
+  },
+  "GJ": {
+    "ASER": {
+      "std_v_division": 16.1
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 890,
+      "sex_ratio": 918,
+      "name": "Gujarat",
+      "area": 196024,
+      "density": 308,
+      "literacy": 79.3,
+      "#schools": 44051,
+      "population": 60384000
+    }
+  },
+  "HP": {
+    "ASER": {
+      "std_v_division": 53.7
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 910,
+      "sex_ratio": 974,
+      "name": "Himachal Pradesh",
+      "area": 55673,
+      "density": 123,
+      "population": 6857000,
+      "#schools": 18024,
+      "literacy": 83.8
+    }
+  },
+  "HR": {
+    "ASER": {
+      "std_v_division": 48.9
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 830,
+      "sex_ratio": 877,
+      "name": "Haryana",
+      "area": 44212,
+      "density": 573,
+      "population": 25353000,
+      "#schools": 22268,
+      "literacy": 76.6
+    }
+  },
+  "JH": {
+    "ASER": {
+      "std_v_division": 23.5
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 947,
+      "name": "Jharkhand",
+      "area": 79714,
+      "density": 414,
+      "population": 32966000,
+      "#schools": 47441,
+      "literacy": 67.6
+    }
+  },
+  "JK": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 920,
+      "sex_ratio": 883,
+      "name": "Jammu and Kashmir",
+      "area": 222236,
+      "density": 56,
+      "population": 12549000,
+      "#schools": 28578,
+      "literacy": 68.7
+    }
+  },
+  "KA": {
+    "ASER": {
+      "std_v_division": 19.7
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 940,
+      "sex_ratio": 968,
+      "name": "Karnataka",
+      "area": 191791,
+      "density": 319,
+      "literacy": 75.6,
+      "#schools": 61739,
+      "population": 61131000
+    }
+  },
+  "KL": {
+    "ASER": {
+      "std_v_division": 38.6
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 1084,
+      "name": "Kerala",
+      "area": 38863,
+      "density": 860,
+      "literacy": 93.9,
+      "#schools": 16458,
+      "population": 33388000
+    }
+  },
+  "LD": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 940,
+      "sex_ratio": 946,
+      "name": "Lakshadweep",
+      "area": 32,
+      "density": 2149,
+      "population": 64000,
+      "#schools": 41,
+      "literacy": 92.3
+    }
+  },
+  "MH": {
+    "ASER": {
+      "std_v_division": 20.3
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 880,
+      "sex_ratio": 925,
+      "name": "Maharashtra",
+      "area": 307713,
+      "density": 365,
+      "population": 112373000,
+      "#schools": 98213,
+      "literacy": 82.9
+    }
+  },
+  "ML": {
+    "ASER": {
+      "std_v_division": 10.7
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 1000,
+      "sex_ratio": 986,
+      "name": "Meghalaya",
+      "area": 22429,
+      "density": 132,
+      "literacy": 75.5,
+      "#schools": 13277,
+      "population": 2964000
+    }
+  },
+  "MN": {
+    "ASER": {
+      "std_v_division": 52.5
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 980,
+      "sex_ratio": 987,
+      "name": "Manipur",
+      "area": 22327,
+      "density": 115,
+      "literacy": 79.9,
+      "#schools": 4865,
+      "population": 2722000
+    }
+  },
+  "MP": {
+    "ASER": {
+      "std_v_division": 19.4
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 900,
+      "sex_ratio": 930,
+      "name": "Madhya Pradesh",
+      "area": 308245,
+      "density": 236,
+      "literacy": 70.6,
+      "#schools": 142587,
+      "population": 72598000
+    }
+  },
+  "MZ": {
+    "ASER": {
+      "std_v_division": 27.7
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 930,
+      "sex_ratio": 975,
+      "name": "Mizoram",
+      "area": 21081,
+      "density": 52,
+      "literacy": 91.6,
+      "#schools": 3072,
+      "population": 1091000
+    }
+  },
+  "NL": {
+    "ASER": {
+      "std_v_division": 21.2
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 950,
+      "sex_ratio": 931,
+      "name": "Nagaland",
+      "area": 16579,
+      "density": 119,
+      "population": 1981000,
+      "#schools": 2799,
+      "literacy": 80.1
+    }
+  },
+  "OR": {
+    "ASER": {
+      "std_v_division": 26.6
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 940,
+      "sex_ratio": 978,
+      "name": "Odisha",
+      "area": 155707,
+      "density": 270,
+      "literacy": 73.5,
+      "#schools": 68978,
+      "population": 41947000
+    }
+  },
+  "PB": {
+    "ASER": {
+      "std_v_division": 47.9
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 830,
+      "sex_ratio": 893,
+      "name": "Punjab",
+      "area": 50362,
+      "density": 551,
+      "population": 27704000,
+      "#schools": 28776,
+      "literacy": 76.7
+    }
+  },
+  "PY": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 950,
+      "sex_ratio": 1038,
+      "name": "Puducherry",
+      "area": 479,
+      "density": 2547,
+      "population": 1244000,
+      "#schools": 719,
+      "literacy": 86.6
+    }
+  },
+  "RJ": {
+    "ASER": {
+      "std_v_division": 28.2
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 870,
+      "sex_ratio": 926,
+      "name": "Rajasthan",
+      "area": 342239,
+      "density": 200,
+      "literacy": 67.1,
+      "#schools": 107931,
+      "population": 68621000
+    }
+  },
+  "SK": {
+    "ASER": {
+      "std_v_division": ""
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 890,
+      "sex_ratio": 889,
+      "name": "Sikkim",
+      "area": 7096,
+      "density": 86,
+      "literacy": 82.2,
+      "#schools": 1279,
+      "population": 608000
+    }
+  },
+  "TL": {
+    "ASER": {
+      "std_v_division": 30.4
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 930,
+      "sex_ratio": 987,
+      "name": "Telangana",
+      "area": 114840,
+      "density": 314,
+      "population": 352000,
+      "#schools": "",
+      "literacy": 66.5
+    }
+  },
+  "TN": {
+    "ASER": {
+      "std_v_division": 21.4
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 950,
+      "sex_ratio": 995,
+      "name": "Tamil Nadu",
+      "area": 130058,
+      "density": 555,
+      "population": 72139000,
+      "#schools": 57539,
+      "literacy": 80.3
+    }
+  },
+  "TR": {
+    "ASER": {
+      "std_v_division": 19.9
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 961,
+      "name": "Tripura",
+      "area": 10486,
+      "density": 350,
+      "population": 3671000,
+      "#schools": 4844,
+      "literacy": 87.8
+    }
+  },
+  "UP": {
+    "ASER": {
+      "std_v_division": 22.6
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 950,
+      "sex_ratio": 908,
+      "name": "Uttar Pradesh",
+      "area": 240928,
+      "density": 829,
+      "literacy": 69.7,
+      "#schools": 245919,
+      "population": 199581000
+    }
+  },
+  "UT": {
+    "ASER": {
+      "std_v_division": 37.0
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 890,
+      "sex_ratio": 963,
+      "name": "Uttarakhand",
+      "area": 53483,
+      "density": 189,
+      "literacy": 79.6,
+      "#schools": 23660,
+      "population": 10117000
+    }
+  },
+  "WB": {
+    "ASER": {
+      "std_v_division": 29.0
+    },
+    "DISE": {
+      "enrollment_sex_ratio_I_V": 960,
+      "sex_ratio": 947,
+      "name": "West Bengal",
+      "area": 88752,
+      "density": 1028,
+      "population": 991348000,
+      "#schools": 95723,
+      "literacy": 77.1
+    }
+  }
 };
 
-// assign the data 
-var indiaCensus = {
+var indiaData = {
 
-	states: stateCensus
+	states: stateData
 
 };
