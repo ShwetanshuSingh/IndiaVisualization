@@ -31,11 +31,25 @@
         </script>
       
         <style type="text/css">
-            #mapid { height: 180px; }
+
+            .info {
+			    padding: 6px 8px;
+			    font: 14px/16px Arial, Helvetica, sans-serif;
+			    background: white;
+			    background: rgba(255,255,255,0.8);
+			    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			    border-radius: 5px;
+			    width: 130px;
+			}
+			.info h4 {
+			    margin: 0 0 5px;
+			    color: #777;
+			}
 
             .legend {
                 line-height: 18px;
-                color: #fff;
+                text-align: left;
+                color: #000;
             }
 
             .legend i {
@@ -51,7 +65,7 @@
                 width: 250px;
                 height: 250px;
                 border: thin solid grey;
-                background: rgba(0,0,0,0.75);	
+                background: rgba(0,0,0,0.5);	
                 opacity: 1;
                 text-align: center;
             }
@@ -151,15 +165,6 @@
         
         <script type="text/javascript" src="./data/india-states.js"></script>
 
-        <script id="popup-template" type="text/template">
-            <h2>{{state}}</h2>
-            <strong>Capital: </strong>{{capital}} <br>
-            <strong>Population: </strong>{{population}} <br>
-            <strong>Area: </strong>{{area}} square kilometer <br>
-            <strong>Density: {{density}}</strong> people per square kilometer <br>
-            <strong>Growth: </strong>{{growth}} % <br>
-        </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
         <script type="text/javascript" src="./data/data.js"></script>
 
@@ -167,7 +172,9 @@
 
         	var mymap = L.map('mapid').setView([21.836006, 87.824707], 5);
             var mapBrew = ['rgb(255,255,204)','rgb(217,240,163)','rgb(173,221,142)','rgb(120,198,121)','rgb(65,171,93)','rgb(35,132,67)','rgb(0,90,50)'];
-            var mapRange = [ 5000, 1000, 800, 500, 300, 100, 0 ]; 
+            var mapRange = [ 50, 25, 20, 15, 10, 5, 0 ]; 
+
+            var popup = new L.Popup({ autoPan: false, className: 'statsPopup' }), closeTooltip;
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2h3ZXRhbnNodXNpbmdoIiwiYSI6ImNqNmwwYmVjejBvbHkycHFvb2YwZHY5cGoifQ.XKC0MznLP2NnBwF_Z9_jFw', {
                 maxZoom: 18,
@@ -183,15 +190,12 @@
 
             function getStyle(feature) {
                 
-                //console.log(indiaData.states.AP.density);
-                //console.log(indiaData.states[feature.properties.code].density);
-
                 return {
-                    weight: 2,
-                    opacity: 0.1,
-                    color: 'black',
+                    weight: 0.75,
+                    opacity: 1,
+                    color: '#000',
                     fillOpacity: 0.9,
-                    fillColor: getDensityColor( indiaData.states[feature.properties.code].DISE.density )
+                    fillColor: getDensityColor( indiaData.states[feature.properties.code].DISE.num_schools * 10000/indiaData.states[feature.properties.code].DISE.population )
                 };
             }
 
@@ -209,10 +213,34 @@
             }
 
             function highlightFeature(e) {
+
+            	var layer = e.target;
+
+
+            	var popupData = {
+		            state: indiaData.states[layer.feature.properties.code].DISE.name,
+		            population: indiaData.states[layer.feature.properties.code].DISE.population,
+		            area: indiaData.states[layer.feature.properties.code].DISE.area,
+		            literacy: indiaData.states[layer.feature.properties.code].DISE.literacy,
+		            num_schools: indiaData.states[layer.feature.properties.code].DISE.num_schools 
+		        };
+
+		        popup.setLatLng(e.latlng);
+		        console.log(popupData);
+
+		        var popContent = '<h2>' + popupData.state + '</h2><strong>Population: </strong>' + 
+		        			popupData.population + '<br><strong>Area: </strong>' + popupData.area + 
+		        			' square kilometer <br><strong>Literacy: </strong>' + popupData.literacy + 
+		        			' % <br><strong>Number of Schools: </strong>' + popupData.num_schools + '<br>';
+        		popup.setContent( popContent );
+
                 var layer = e.target;
 
+                if (!popup._map) popup.openOn(mymap);
+        		window.clearTimeout(closeTooltip);
+
                 layer.setStyle({
-                    weight: 5,
+                    weight: 2,
                     color: '#666',
                     dashArray: '',
                     fillOpacity: 0.7
@@ -225,8 +253,12 @@
                 updateGraph( indiaData.states[layer.feature.properties.code] );
             }
 
-            function resetHighlight(e) {
+            function resetHighlight(e) {        	
                 geojson.resetStyle(e.target);
+
+                closeTooltip = window.setTimeout(function() {
+            		mymap.closePopup( popup ); 
+        		}, 100);
             }
 
             function zoomToFeature(e) {
@@ -254,6 +286,8 @@
                 var div = L.DomUtil.create('div', 'info legend');
 
                 var brew = mapBrew;
+
+                div.innerHTML += '<span>Number of schools per 10000 people</span><br><br>'
 
                 for (var i = 0; i < grades.length; i++) {
                     from = grades[i];

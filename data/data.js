@@ -10,7 +10,7 @@ var stateData = {
       "area": 8249,
       "density": 46,
       "literacy": 86.3,
-      "#schools": 410,
+      "num_schools": 410,
       "population": 380000
     }
   },
@@ -25,7 +25,7 @@ var stateData = {
       "area": 275045,
       "density": 308,
       "literacy": 67.70,
-      "#schools": 60435,
+      "num_schools": 60435,
       "population": 84666000
     }
   },
@@ -40,7 +40,7 @@ var stateData = {
       "area": 83743,
       "density": 17,
       "literacy": 67.0,
-      "#schools": 4012,
+      "num_schools": 4012,
       "population": 1383000
     }
   },
@@ -55,7 +55,7 @@ var stateData = {
       "area": 78438,
       "density": 398,
       "literacy": 73.2,
-      "#schools": 65894,
+      "num_schools": 65894,
       "population": 31169000
     }
   },
@@ -70,7 +70,7 @@ var stateData = {
       "area": 94163,
       "density": 1106,
       "population": 103805000,
-      "#schools": 80166,
+      "num_schools": 80166,
       "literacy": 63.8
     }
   },
@@ -85,7 +85,7 @@ var stateData = {
       "area": 114,
       "density": 9258,
       "literacy": 86.4,
-      "#schools": 201,
+      "num_schools": 201,
       "population": 1055000
     }
   },
@@ -100,7 +100,7 @@ var stateData = {
       "area": 135191,
       "density": 189,
       "literacy": 71.0,
-      "#schools": 50705,
+      "num_schools": 50705,
       "population": 25540000
     }
   },
@@ -115,7 +115,7 @@ var stateData = {
       "area": 112,
       "density": 2191,
       "literacy": 87.1,
-      "#schools": 120,
+      "num_schools": 120,
       "population": 243000
     }
   },
@@ -130,7 +130,7 @@ var stateData = {
       "area": 1483,
       "density": 11320,
       "population": 16753000,
-      "#schools": 5751,
+      "num_schools": 5751,
       "literacy": 86.3
     }
   },
@@ -145,7 +145,7 @@ var stateData = {
       "area": 451,
       "density": 700,
       "population": 343000,
-      "#schools": 323,
+      "num_schools": 323,
       "literacy": 77.7
     }
   },
@@ -160,7 +160,7 @@ var stateData = {
       "area": 3702,
       "density": 394,
       "literacy": 87.4,
-      "#schools": 1462,
+      "num_schools": 1462,
       "population": 1458000
     }
   },
@@ -175,7 +175,7 @@ var stateData = {
       "area": 196024,
       "density": 308,
       "literacy": 79.3,
-      "#schools": 44051,
+      "num_schools": 44051,
       "population": 60384000
     }
   },
@@ -190,7 +190,7 @@ var stateData = {
       "area": 55673,
       "density": 123,
       "population": 6857000,
-      "#schools": 18024,
+      "num_schools": 18024,
       "literacy": 83.8
     }
   },
@@ -205,7 +205,7 @@ var stateData = {
       "area": 44212,
       "density": 573,
       "population": 25353000,
-      "#schools": 22268,
+      "num_schools": 22268,
       "literacy": 76.6
     }
   },
@@ -220,7 +220,7 @@ var stateData = {
       "area": 79714,
       "density": 414,
       "population": 32966000,
-      "#schools": 47441,
+      "num_schools": 47441,
       "literacy": 67.6
     }
   },
@@ -235,7 +235,7 @@ var stateData = {
       "area": 222236,
       "density": 56,
       "population": 12549000,
-      "#schools": 28578,
+      "num_schools": 28578,
       "literacy": 68.7
     }
   },
@@ -250,7 +250,7 @@ var stateData = {
       "area": 191791,
       "density": 319,
       "literacy": 75.6,
-      "#schools": 61739,
+      "num_schools": 61739,
       "population": 61131000
     }
   },
@@ -265,7 +265,7 @@ var stateData = {
       "area": 38863,
       "density": 860,
       "literacy": 93.9,
-      "#schools": 16458,
+      "num_schools": 16458,
       "population": 33388000
     }
   },
@@ -280,7 +280,7 @@ var stateData = {
       "area": 32,
       "density": 2149,
       "population": 64000,
-      "#schools": 41,
+      "num_schools": 41,
       "literacy": 92.3
     }
   },
@@ -295,7 +295,7 @@ var stateData = {
       "area": 307713,
       "density": 365,
       "population": 112373000,
-      "#schools": 98213,
+      "num_schools": 98213,
       "literacy": 82.9
     }
   },
@@ -310,7 +310,7 @@ var stateData = {
       "area": 22429,
       "density": 132,
       "literacy": 75.5,
-      "#schools": 13277,
+      "num_schools": 13277,
       "population": 2964000
     }
   },
@@ -325,7 +325,7 @@ var stateData = {
       "area": 22327,
       "density": 115,
       "literacy": 79.9,
-      "#schools": 4865,
+      "num_schools": 4865,
       "population": 2722000
     }
   },
@@ -340,7 +340,7 @@ var stateData = {
       "area": 308245,
       "density": 236,
       "literacy": 70.6,
-      "#schools": 142587,
+      "num_schools": 142587,
       "population": 72598000
     }
   },
@@ -355,7 +355,7 @@ var stateData = {
       "area": 21081,
       "density": 52,
       "literacy": 91.6,
-      "#schools": 3072,
+      "num_schools": 3072,
       "population": 1091000
     }
   },
@@ -370,7 +370,7 @@ var stateData = {
       "area": 16579,
       "density": 119,
       "population": 1981000,
-      "#schools": 2799,
+      "num_schools": 2799,
       "literacy": 80.1
     }
   },
@@ -385,7 +385,7 @@ var stateData = {
       "area": 155707,
       "density": 270,
       "literacy": 73.5,
-      "#schools": 68978,
+      "num_schools": 68978,
       "population": 41947000
     }
   },
@@ -400,7 +400,7 @@ var stateData = {
       "area": 50362,
       "density": 551,
       "population": 27704000,
-      "#schools": 28776,
+      "num_schools": 28776,
       "literacy": 76.7
     }
   },
@@ -415,7 +415,7 @@ var stateData = {
       "area": 479,
       "density": 2547,
       "population": 1244000,
-      "#schools": 719,
+      "num_schools": 719,
       "literacy": 86.6
     }
   },
@@ -430,7 +430,7 @@ var stateData = {
       "area": 342239,
       "density": 200,
       "literacy": 67.1,
-      "#schools": 107931,
+      "num_schools": 107931,
       "population": 68621000
     }
   },
@@ -445,7 +445,7 @@ var stateData = {
       "area": 7096,
       "density": 86,
       "literacy": 82.2,
-      "#schools": 1279,
+      "num_schools": 1279,
       "population": 608000
     }
   },
@@ -459,8 +459,8 @@ var stateData = {
       "name": "Telangana",
       "area": 114840,
       "density": 314,
-      "population": 352000,
-      "#schools": "",
+      "population": 35200000,
+      "num_schools": 40818,
       "literacy": 66.5
     }
   },
@@ -475,7 +475,7 @@ var stateData = {
       "area": 130058,
       "density": 555,
       "population": 72139000,
-      "#schools": 57539,
+      "num_schools": 57539,
       "literacy": 80.3
     }
   },
@@ -490,7 +490,7 @@ var stateData = {
       "area": 10486,
       "density": 350,
       "population": 3671000,
-      "#schools": 4844,
+      "num_schools": 4844,
       "literacy": 87.8
     }
   },
@@ -505,7 +505,7 @@ var stateData = {
       "area": 240928,
       "density": 829,
       "literacy": 69.7,
-      "#schools": 245919,
+      "num_schools": 245919,
       "population": 199581000
     }
   },
@@ -520,7 +520,7 @@ var stateData = {
       "area": 53483,
       "density": 189,
       "literacy": 79.6,
-      "#schools": 23660,
+      "num_schools": 23660,
       "population": 10117000
     }
   },
@@ -535,7 +535,7 @@ var stateData = {
       "area": 88752,
       "density": 1028,
       "population": 991348000,
-      "#schools": 95723,
+      "num_schools": 95723,
       "literacy": 77.1
     }
   }
