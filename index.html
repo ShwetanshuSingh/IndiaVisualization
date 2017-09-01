@@ -104,7 +104,7 @@
             else window.onload = autorun;
         </script>
 
-        <div id="mapid" style="width: 100%; height: 707px; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
+        <div id="mapid" style="width: 100%; height: 650px; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
             <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
                 
                 <div class="leaflet-pane leaflet-shadow-pane">
@@ -190,16 +190,18 @@
 
             function getStyle(feature) {
                 
-                return {
+               return {
                     weight: 0.75,
                     opacity: 1,
                     color: '#000',
                     fillOpacity: 0.9,
-                    fillColor: getDensityColor( indiaData.states[feature.properties.code].DISE.num_schools * 10000/indiaData.states[feature.properties.code].DISE.population )
+                    fillColor: getDensityColor( indiaData.states[feature.properties.code].DISE.num_schools * 10000/
+                        indiaData.states[feature.properties.code].DISE.population )
                 };
             }
 
             function getDensityColor(d) {
+                console.log(d);
                 var colors = Array.prototype.slice.call(mapBrew).reverse();
                 var range = mapRange;
 
@@ -216,21 +218,21 @@
 
             	var layer = e.target;
 
-
             	var popupData = {
 		            state: indiaData.states[layer.feature.properties.code].DISE.name,
 		            population: indiaData.states[layer.feature.properties.code].DISE.population,
 		            area: indiaData.states[layer.feature.properties.code].DISE.area,
 		            literacy: indiaData.states[layer.feature.properties.code].DISE.literacy,
-		            num_schools: indiaData.states[layer.feature.properties.code].DISE.num_schools 
+		            num_schools: indiaData.states[layer.feature.properties.code].DISE.num_schools,
+                    density: indiaData.states[layer.feature.properties.code].DISE.density
 		        };
 
 		        popup.setLatLng(e.latlng);
-		        console.log(popupData);
+		        //console.log(popupData);
 
 		        var popContent = '<h2>' + popupData.state + '</h2><strong>Population: </strong>' + 
 		        			popupData.population + '<br><strong>Area: </strong>' + popupData.area + 
-		        			' square kilometer <br><strong>Literacy: </strong>' + popupData.literacy + 
+		        			' square kilometer <br><strong>Population Density: </strong>' + popupData.density + ' per square kilometer <br><strong>Literacy: </strong>' + popupData.literacy + 
 		        			' % <br><strong>Number of Schools: </strong>' + popupData.num_schools + '<br>';
         		popup.setContent( popContent );
 
